@@ -4,14 +4,14 @@ import requests
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Used to encrypt session data
+app.secret_key = os.urandom(24)  # Use a secure key for session encryption
 
-# Read the environment variables for CLIENT_ID and CLIENT_SECRET
+# Read environment variables for CLIENT_ID and CLIENT_SECRET
 CLIENT_ID = os.getenv('CLIENT_ID')
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
-REDIRECT_URI = "https://insightkit.co/oauth_callback"
-AUTH_URL = "https://insightkit.co/oauth/authorize"
-TOKEN_URL = "https://insightkit.co/oauth/token"
+REDIRECT_URI = "https://insightkit-95170003f5ee.herokuapp.com/oauth_callback"
+AUTH_URL = "https://app.convertkit.com/oauth/authorize"
+TOKEN_URL = "https://api.convertkit.com/oauth/token"
 API_BASE_URL = "https://api.convertkit.com/v4"
 
 @app.route('/')
@@ -20,6 +20,7 @@ def index():
 
 @app.route('/authorize')
 def authorize():
+    print("Starting authorization process")
     auth_url = f"{AUTH_URL}?client_id={CLIENT_ID}&response_type=code&redirect_uri={REDIRECT_URI}"
     return redirect(auth_url)
 
