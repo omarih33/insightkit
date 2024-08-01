@@ -1,0 +1,17 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ConvertKit Broadcasts</title>
+</head>
+<body>
+  <h1>List of Broadcasts</h1>
+  <ul>
+    {% for broadcast in broadcasts['broadcasts'] %}
+      <li>{{ broadcast['subject'] }} (Created at: {{ broadcast['created_at'] }})</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Go Back</a>
+</body>
+</html>
