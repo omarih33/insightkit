@@ -100,4 +100,4 @@ def refresh_token():
     session['refresh_token'] = refresh_json['refresh_token']
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
