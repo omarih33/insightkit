@@ -1,5 +1,5 @@
-   *.pyc
-   __pycache__/
-   instance/
-   .venv/
-   .env
+*.pyc
+__pycache__/
+instance/
+.venv/
+.env
